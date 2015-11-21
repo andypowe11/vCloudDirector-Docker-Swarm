@@ -95,10 +95,10 @@ talk to it just like any other Docker host, e.g.:
 
 Good luck!
 
-# Tidying up
+## Tidying up
 
-Fed up with all this Docker nonesense? Run
+Fed up with all this Docker stuff? Run
 
     ./undeploy.sh
 
-to tidy up after yourself.
+to tidy up after yourself :-).
