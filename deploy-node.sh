@@ -132,7 +132,9 @@ coreos:
         After=docker.service
 
         [Service]
-        Restart=no
+        Restart=on-failure
+        RestartSec=10
+        ExecStartPre=-/usr/bin/docker rm $(/usr/bin/docker ps -q -f status=exited)
         ExecStart=/usr/bin/docker run --name docker-swarm -d swarm join --addr=${NODEIP}:4243 etcd://${NODEIP}:2379/swarm
   update:
     reboot-strategy: best-effort

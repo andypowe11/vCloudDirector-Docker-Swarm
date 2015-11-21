@@ -141,7 +141,9 @@ coreos:
         After=docker.service
 
         [Service]
-        Restart=no
+        Restart=on-failure
+        RestartSec=10
+        ExecStartPre=-/usr/bin/docker rm $(/usr/bin/docker ps -q -f status=exited)
         ExecStart=/usr/bin/docker run --name docker-swarm -d -p 2375:2375 swarm manage etcd://${MASTERIP}:2379/swarm
   update:
     reboot-strategy: best-effort
