@@ -1,6 +1,6 @@
 # vCloud Director/vCloud Air Docker cluster using Swarm
 
-A vca- cli script to build a CoreOS-based Docker cluster on vCloud Director
+A vca-cli script to build a CoreOS-based Docker cluster on vCloud Director
 or vCloud Air using Swarm.
 
 ## Usage
