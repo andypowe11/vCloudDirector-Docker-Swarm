@@ -124,7 +124,13 @@ http://blog.pacogomez.com/coreos-vcloud-air-on-demand/.
 
 I adopt roughly the same approach to deploying each node in the cluster.
 
-In my case, each node is deployed by generating two ISOs, the first to
-configure the networking.
-The second to set up etcd2, fleet and swarm.
+In my case, each node is deployed by generating two ISOs: the first to
+configure the networking;
+the second to set up etcd2, fleet and swarm.
 Each node is therefore booted twice before the cluster comes up.
+
+Swarm is run as a container on each host.
+The Swarm nodes advertise themselves via etcd. All nodes form part of the etcd
+cluster (i.e. there are 4 of them, 3 nodes and 1 master).
+The etcd cluster is created using a token from
+https://discovery.etcd.io/new?size=4.
