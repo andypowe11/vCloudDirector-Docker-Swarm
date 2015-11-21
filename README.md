@@ -14,15 +14,24 @@ Do the following:
 
 ## Install vca.cli
 
+See https://github.com/vmware/vca-cli but basically:
+
     pip install vca-cli
+
+Generally, it is sensible to do this in a virtualenv. You only need do it once.
 
 ## Log in
 
 I'll leave this to you since the parameters will vary depending on whether
 you are using vCloud Air or vCloud Director.
 
-Note that a username and password are required in config.sh but this is just to allow ovftool to upload the ISOs - I couldn't find a way of making
-this upload work using vca-cli :-(.
+For me, it is along the lines of:
+
+    vca login _my_email_ --host compute.somewhere.com --org _my_org_ --version 5.6
+
+Note that a username and password (optional) are required in
+config.sh but this is just to allow ovftool to upload the ISOs -
+I couldn't find a way of making this upload work using vca-cli :-(.
 
 ## Edit config.sh
 
