@@ -29,7 +29,7 @@ you are using vCloud Air or vCloud Director.
 
 For me, it is along the lines of:
 
-    vca login _my_email_ --host compute.somewhere.com --org _my_org_ --version 5.6
+    vca login _my_email_ --host vcloud.somewhere.com --org _my_org_ --version 5.6
 
 I'm using vCloud Director.
 
