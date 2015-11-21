@@ -83,11 +83,11 @@ export TEMPLATE=_your_coreos_template_
 This takes a while - sorry, but it is difficult to make things happen in
 parallel using vca-cli.  If it works a whale will pop up at the end -
 you'll be running a Swarm master and a cluster of 3 nodes. You should be
-able to grow this cluster at will - but I'll leave that as an exercise for the
+able to grow this cluster at will but I'll leave that as an exercise for the
 reader (look at deploy-node.sh to see how the current nodes
 are deployed)!
 
-Swarm is deployed listening on port 2375 (the standard Docker port) at
+Swarm is configured to listen on port 2375 (the standard Docker port) at
 whatever external IP you've configured into config.sh. So you can
 talk to it just like any other Docker host, e.g.:
 
