@@ -22,7 +22,8 @@ See https://github.com/vmware/vca-cli but basically:
 
     pip install vca-cli
 
-Generally, it is sensible to do this in a virtualenv. You only need do it once.
+Generally, it is sensible to do this in a virtualenv.
+You only need to do it once.
 
 ## Log in
 
@@ -50,6 +51,8 @@ from it.
 You can grab one from http://stable.release.core-os.net/amd64-usr/current/.
 
 See https://blogs.vmware.com/vsphere/2015/03/coreos-now-supported-vmware.html for more details.
+
+You only need to do this once.
 
 ## Edit config.sh
 
