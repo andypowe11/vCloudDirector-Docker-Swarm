@@ -40,7 +40,7 @@ Note that a username and password (optional) are required in
 config.sh but this is just to allow ovftool to upload the ISOs -
 I couldn't find a way of making this upload work using vca-cli :-(.
 
-## CoreOS OVF file
+## Add a CoreOS OVF file to your catalog
 
 CoreOS is a small Linux distro used as a container host.
 See https://coreos.com/ for details.
