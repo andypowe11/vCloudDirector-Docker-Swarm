@@ -132,8 +132,26 @@ configure the networking;
 the second to set up etcd2, fleet and swarm.
 Each node is therefore booted twice before the cluster comes up.
 
+One of the annoying features of using vca-cli is that there
+seems to be a 1:1 relationship between VMs and vApps.
+So whereas you might expect the master and the 3 nodes to
+live in a single vApp, unfortunately they have to be deployed to 4
+separate vApps.  Not a major issue but less tidy than I would have
+liked.
+
 Swarm is run as a container on each host.
 The Swarm nodes advertise themselves via etcd. All nodes form part of the etcd
 cluster (i.e. there are 4 of them, 3 nodes and 1 master).
 The etcd cluster is created using a token from
 https://discovery.etcd.io/new?size=4.
+
+For debugging, you should be able to ssh to the master, using the
+username 'core' and your private key. You can ssh on from there to each
+of the nodes. Other then that, it shouldn't really be necessary to log
+in to any of the hosts.
+
+## Future work
+
+* Persistent storge - no there isn't any currently!
+* Hybrid swarms - building a cluster across vCloud Director / vCloud Air
+and AWS.
