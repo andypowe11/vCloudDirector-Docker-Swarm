@@ -9,8 +9,10 @@ Do the following:
 
 * Install vca-cli (if you haven't already)
 * Log in to vCloud Air or vCloud Director
+* Upload a CoreOS OVF file to a suitable catalog on your vCloud Air or
+vCloud Director host
 * Copy deploy.sh, deploy-node.sh, config.sh and undeploy.sh to the
-same directory
+a directory somewhere
 * Edit config.sh to set the variables for your environment
 * Run deploy.sh
 
@@ -36,6 +38,18 @@ I'm using vCloud Director.
 Note that a username and password (optional) are required in
 config.sh but this is just to allow ovftool to upload the ISOs -
 I couldn't find a way of making this upload work using vca-cli :-(.
+
+## CoreOS OVF file
+
+CoreOS is a small Linux distro used as a container host.
+See https://coreos.com/ for details.
+
+You need a copy of a CoreOS .ovf file in a suitable catalog on your
+vCloud Air or vCloud Director host so that you can deploy VMs
+from it.
+You can grab one from http://stable.release.core-os.net/amd64-usr/current/.
+
+See https://blogs.vmware.com/vsphere/2015/03/coreos-now-supported-vmware.html for more details.
 
 ## Edit config.sh
 
@@ -102,3 +116,15 @@ Fed up with all this Docker stuff? Run
     ./undeploy.sh
 
 to tidy up after yourself :-).
+
+## Behind the scenes
+
+This work was inspired by Paco Gómez's blog post at
+http://blog.pacogomez.com/coreos-vcloud-air-on-demand/.
+
+I adopt roughly the same approach to deploying each node in the cluster.
+
+In my case, each node is deployed by generating two ISOs, the first to
+configure the networking.
+The second to set up etcd2, fleet and swarm.
+Each node is therefore booted twice before the cluster comes up.
