@@ -147,7 +147,7 @@ https://discovery.etcd.io/new?size=4.
 
 For debugging, you should be able to ssh to the master, using the
 username 'core' and your private key. You can ssh on from there to each
-of the nodes. Other then that, it shouldn't really be necessary to log
+of the nodes. Other than that, it shouldn't really be necessary to log
 in to any of the hosts.
 
 ## Future work
