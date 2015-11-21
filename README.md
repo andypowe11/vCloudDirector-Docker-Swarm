@@ -31,6 +31,8 @@ For me, it is along the lines of:
 
     vca login _my_email_ --host compute.somewhere.com --org _my_org_ --version 5.6
 
+I'm using vCloud Director.
+
 Note that a username and password (optional) are required in
 config.sh but this is just to allow ovftool to upload the ISOs -
 I couldn't find a way of making this upload work using vca-cli :-(.
@@ -75,6 +77,8 @@ export TEMPLATE=_your_coreos_template_
 ```
 
 ## Run deploy.sh
+
+    ./deploy.sh
 
 This takes a while - sorry, but it is difficult to make things happen in
 parallel using vca-cli.  If it works a whale will pop up at the end.
