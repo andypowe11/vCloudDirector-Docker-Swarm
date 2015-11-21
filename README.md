@@ -155,3 +155,5 @@ in to any of the hosts.
 * Persistent storge - no there isn't any currently!
 * Hybrid swarms - building a cluster across vCloud Director / vCloud Air
 and AWS.
+See https://github.com/andypowe11/AWS-Docker-Swarm for an AWS CloudFormation
+template to build the equivalent cluster in AWS.
